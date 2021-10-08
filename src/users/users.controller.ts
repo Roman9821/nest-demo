@@ -10,8 +10,6 @@ export class UsersController {
     @Body('name') userName: string,
     @Body('color') color: Array<string>,
   ): Promise<any> {
-    console.log(userName, color);
-
     const user = await this.userService.insertUser(userName, color);
     return { user };
   }
